@@ -2,7 +2,7 @@
 function calculateInvoice (subtotal, taxRate, discount){ //Define a function that calculates tax
     let total = (subtotal + (subtotal * taxRate)) - discount; // Apply formula
     console.log (`Total Invoice: $${total.toFixed(2)}`); // Format and return
-}
+};
 
 //Test cases 
 calculateInvoice(100, 0.08, 5); //Expected output: "Total Invoice: $103.00"
@@ -39,7 +39,7 @@ function calculateShippingCost(weight, location, expedited = false) { //Function
     let baseCost = location === "USA" ? 5 + (0.5 * weight) : 10 + (0.7 * weight); //Calculate shipping fees
     let totalCost = expedited ? baseCost + 10 : baseCost;
     console.log(`Shipping Cost: $${totalCost.toFixed(2)}`); // Shipping cost is logged
-}
+};
 
 //Test cases
 calculateShippingCost(10, "USA", true); // Expected output: "Shipping Cost: $20.00"
@@ -49,7 +49,7 @@ calculateShippingCost(5, "Canada", false); // Expected output: "Shipping Cost: $
 function calculateLoanInterest(principal, rate, years) { //Function calculateLoanInterest
     let interest = principal * rate * years; //Interest formula
     console.log(`Total Interest: $${interest.toFixed(2)}`); //Total interest amount is logger
-}
+};
 
 //Test cases
 calculateLoanInterest(1000, 0.05, 3); // Expected output: "Total Interest: $150.00"
@@ -57,9 +57,9 @@ calculateLoanInterest(5000, 0.07, 5); // Expected output: "Total Interest: $1750
 
 //Task 6: Higher-Order Functions
 function filterHighValueTransactions(transactions, filterFunction) {
-    let highValueTransactions = transactions.filter(filterFunction); //// Apply filter function to get transactions
-    console.log(highValueTransactions); // Print the filtered transaction
-}
+    let result = transactions.filter(filterFunction); //// Apply filter function to get transactions
+    console.log("High Value Transactions:",result); // Print the filtered transaction
+};
 
 //Test cases
 let transactions = [500, 1200, 3000, 800, 2200];
@@ -72,7 +72,7 @@ function createBudgetTracker() { //A budget tracker to maintains a running balan
         balance -= expense; //Deducting expense from the balance
         console.log(`Current Balance: -$${Math.abs(balance)}`); //Updated negative balance is logged
     };
-}
+};
 
 //Creating a budget tracker instance - test cases
 let budget = createBudgetTracker();
@@ -81,10 +81,10 @@ budget(200); // Expected output: "Current Balance: -$500"
 
 //Task 8: Recursion in JavaScript
 function calculateGrowth(years, revenue) { //Recursive function 
-    if (years === 10) return revenue.toFixed(2); //Stopping recursion after 10 years
+    if (years >= 10) return `Projected revenue: $${revenue.toFixed(2)}`; //Stopping recursion after 10 years
     return calculateGrowth(years + 1, revenue * 1.05); //Increasing the revenue
-}
+};
 
 // Test cases
-calculateGrowth(8, 1000); // Expected output: "Projected Revenue: $1102.50"
-calculateGrowth(5, 5000); // Expected output: "Projected Revenue: $6381.41"
+console.log(calculateGrowth(8, 1000)); // Expected output: "Projected Revenue: $1102.50"
+console.log(calculateGrowth(5, 5000)); // Expected output: "Projected Revenue: $6381.41"
