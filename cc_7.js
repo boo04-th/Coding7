@@ -35,12 +35,22 @@ calculateLoyaltyDiscount(100, 6); // Expected output: "Discounted Price: $85.00"
 calculateLoyaltyDiscount(200, 2); // Expected output: "Discounted Price: $190.00"
 
 //Task 4: Parameters and Arguments
-function calculateShippingCost(weight, location, expedited = false) {
-    let baseCost = location === "USA" ? 5 + (0.5 * weight) : 10 + (0.7 * weight);
+function calculateShippingCost(weight, location, expedited = false) { //Function calculateShippingCost
+    let baseCost = location === "USA" ? 5 + (0.5 * weight) : 10 + (0.7 * weight); //Calculate shipping fees
     let totalCost = expedited ? baseCost + 10 : baseCost;
-    console.log(`Shipping Cost: $${totalCost.toFixed(2)}`);
+    console.log(`Shipping Cost: $${totalCost.toFixed(2)}`); // Shipping cost is logged
 }
 
 //Test cases
 calculateShippingCost(10, "USA", true); // Expected output: "Shipping Cost: $20.00"
 calculateShippingCost(5, "Canada", false); // Expected output: "Shipping Cost: $13.50"
+
+//Task 5: 
+function calculateLoanInterest(principal, rate, years) { //Function calculateLoanInterest
+    let interest = principal * rate * years; //Interest formula
+    console.log(`Total Interest: $${interest.toFixed(2)}`); //Total interest amount is logger
+}
+
+//Text cases
+calculateLoanInterest(1000, 0.05, 3); // Expected output: "Total Interest: $150.00"
+calculateLoanInterest(5000, 0.07, 5); // Expected output: "Total Interest: $1750.00"
