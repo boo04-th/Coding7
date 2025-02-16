@@ -1,7 +1,7 @@
 //Task 1: Function Declaration
 function calculateInvoice (subtotal, taxRate, discount){ //Define a function that calculates tax
     let total = (subtotal + (subtotal * taxRate)) - discount; // Apply formula
-    return `Total Invoice: $${total.toFixed(2)}`; // Format and return
+    console.log (`Total Invoice: $${total.toFixed(2)}`); // Format and return
 }
 
 //Test cases 
@@ -11,7 +11,7 @@ calculateInvoice(500, 0.1, 20); //Expected output: "Total Invoice: $530.00"
 //Task 2: Function Expression
 let calculateHourlyWage = function(salary, hoursPerWeek) {
     let hourlyWage = salary / (hoursPerWeek * 52);
-    return `Hourly Wage: $${hourlyWage.toFixed(2)}`;
+    console.log (`Hourly Wage: $${hourlyWage.toFixed(2)}`);
 };
 
 //Test cases 
@@ -34,4 +34,3 @@ let calculateLoyaltyDiscount = (amount, years) => {
 calculateLoyaltyDiscount(100, 6); // Expected output: "Discounted Price: $85.00"
 calculateLoyaltyDiscount(200, 2); // Expected output: "Discounted Price: $190.00"
 
-//Task 4: Parameters and Arguments
