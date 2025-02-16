@@ -64,3 +64,17 @@ function filterHighValueTransactions(transactions, filterFunction) {
 //Test cases
 let transactions = [500, 1200, 3000, 800, 2200];
 filterHighValueTransactions(transactions, amount => amount > 1000); // Expected output: [1200, 3000, 2200]
+
+//Task 7: Closures 
+function createBudgetTracker() { //A budget tracker to maintains a running balance
+    let balance = 0; //Initalize the balance
+    return function(expense) { 
+        balance -= expense; //Deducting expense from the balance
+        console.log(`Current Balance: -$${Math.abs(balance)}`); //Updated negative balance is logged
+    };
+}
+
+//Creating a budget tracker instance - test cases
+let budget = createBudgetTracker();
+budget(300); // Expected output: "Current Balance: -$300"
+budget(200); // Expected output: "Current Balance: -$500"
