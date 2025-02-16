@@ -78,3 +78,13 @@ function createBudgetTracker() { //A budget tracker to maintains a running balan
 let budget = createBudgetTracker();
 budget(300); // Expected output: "Current Balance: -$300"
 budget(200); // Expected output: "Current Balance: -$500"
+
+//Task 8: Recursion in JavaScript
+function calculateGrowth(years, revenue) { //Recursive function 
+    if (years === 10) return revenue.toFixed(2); //Stopping recursion after 10 years
+    return calculateGrowth(years + 1, revenue * 1.05); //Increasing the revenue
+}
+
+// Test cases
+calculateGrowth(8, 1000); // Expected output: "Projected Revenue: $1102.50"
+calculateGrowth(5, 5000); // Expected output: "Projected Revenue: $6381.41"
